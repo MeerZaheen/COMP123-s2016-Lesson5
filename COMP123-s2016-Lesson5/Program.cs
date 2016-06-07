@@ -28,10 +28,12 @@ namespace COMP123_s2016_Lesson5
             deck.Shuffle(); // shuffle the deck
             deck.Display(); // display the deck after shuffling
 
+            Card cardDealth = deck.Deal();
+            Console.WriteLine("Card Delt: {0} or {1}", cardDealth.Face, cardDealth.Suit);
+            Console.WriteLine();
+            deck.Display();
 
         } // end Main
-
-
 
     } // end Program
 
