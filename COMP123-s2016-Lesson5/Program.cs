@@ -26,8 +26,19 @@ namespace COMP123_s2016_Lesson5
             List<Card> Deck = new List<Card>();
 
             CreateDeck(Deck);
-        }
+        }// end Main
 
+        // PUBLIC STATIC METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        /**
+         * <summary>
+         * This method loads a list of cards with Card objects
+         * </summary>
+         * 
+         * @method CreateDeck
+         * @param {List<Card>} deck
+         * @returns {void}
+         */
         public static void CreateDeck(List<Card> deck)
         {
             string suit = "";
@@ -52,8 +63,8 @@ namespace COMP123_s2016_Lesson5
                 {
                     deck.Add(new Card(face, suit));
                 } //end for -face
-            }
-        }
+            } //end for -suit
+        } // end CreateDeck method
     }
 }
 
