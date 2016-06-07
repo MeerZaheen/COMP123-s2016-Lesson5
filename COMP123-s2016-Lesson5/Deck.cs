@@ -1,0 +1,128 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace COMP123_s2016_Lesson5
+{
+
+    /**
+    * <summary>
+    * This class extends the List<Card> generic type
+    * </summary>
+    *
+    * @class Deck
+    */
+
+    class Deck : List<Card>
+    {
+        // CONSTRUCTORS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        /**
+        * <summary>
+        * This is the default constructor for the Deck class
+        * </summary>
+        *
+        * @constructor Deck
+        */
+
+        public Deck()
+        {
+            // create my deck of cards
+            this._create();
+        }
+
+        // PRIVATE METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        /**
+         * <summary>
+         * This method loads a list of cards with Card objects
+         * </summary>
+         * 
+         * @private
+         * @method _create
+         * @returns {void}
+         */
+        private void _create()
+        {
+            string suit = "";
+
+            for (int suitIndex = 0; suitIndex < 4; suitIndex++)
+            {
+                switch (suitIndex)
+                {
+                    case 0:
+                        suit = "hearts";
+                        break;
+                    case 1:
+                        suit = "clubs";
+                        break;
+                    case 2:
+                        suit = "diamonds";
+                        break;
+                    case 3:
+                        suit = "spades";
+                        break;
+
+                } // end suit switch
+                for (int face = 1; face < 14; face++)
+                {
+                    this.Add(new Card(face, suit));
+                } // end for - face
+
+            } // end for - suit
+
+        } // end CreateDeck method
+
+        // PUBLIC METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        /**
+         * <summary>
+         * This method displays a List of Card objects to the Console
+         * </summary>
+         * 
+         * @method Display
+         * @returns {void}
+         */
+        public void Display() //deck related to Deck in program class
+        {
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++");
+            Console.WriteLine("+Current Deck");
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++");
+            foreach (Card card in this) //foreach TABTAB. For each(Card) card in deck
+            {
+                Console.WriteLine("{0} of {1}", card.Face, card.Suit);
+            }
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++");
+            Console.WriteLine();
+        }
+
+        /**
+        * <summary>
+        * This method randomly shuffles a list of Card objects
+        * </summary>
+        *
+        * @method shuffleDeck
+        * @param {list<Card>deck
+        * @returns {void}
+        */
+        public void Shuffle()
+        {
+            // this creats a sudo random number sequence and stores it in random
+            Random random = new Random(); // new: create a new type of random and assign it to the shape of random
+            // record the number of cards in the deck
+            int cardCount = this.Count;
+
+            Console.WriteLine("Card count: {0}", cardCount);
+
+            //iterate through the list of cards
+            for (int currentCard = 0; currentCard < cardCount; currentCard++)
+            {
+                // swapping algorithm
+
+                Card tempCard = this[currentCard]; // takes the current card and places it in tempcard
+                int randomCard = random.Next(0, cardCount); // get a random card index
+                this[currentCard] = this[randomCard]; // copy value from randomCard to currentCard
+                this[randomCard] = tempCard; // copy current card to random card
+            }
+        }
+    }
+}

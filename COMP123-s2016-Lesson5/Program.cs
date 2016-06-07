@@ -7,139 +7,143 @@ using System.Threading.Tasks;
 namespace COMP123_s2016_Lesson5
 {
     /**
-    * This class is the "driver" class for our Program
-    *
-    * @class Program
-    */
+     * This class is the "driver" class for our Program
+     * 
+     * @class Program
+     */
     public class Program
     {
         /**
-        * the main method for our driver class Program
-        *
-        * @method Main
-        * @param {string[]} args
-        */
-        public static void Main(string[] args)
-        {
-            //list that reps a deck of cards
-           
-            List<Card> Deck = new List<Card>();
-
-            CreateDeck(Deck);
-            DisplayDeck(Deck); // display initial state of deck
-
-            ShuffleDeck(Deck);
-            DisplayDeck(Deck); //display the suffled state of deck
-        }// end Main
-
-        // PUBLIC STATIC METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-        /**
-         * <summary>
-         * This method loads a list of cards with Card objects
-         * </summary>
+         * the main method for our driver class Program
          * 
-         * @method CreateDeck
-         * @param {List<Card>} deck
+         * @method Main
+         * @param {sting[]} args
          * @returns {void}
          */
-        public static void CreateDeck(List<Card> deck)
+        public static void Main(string[] args)
         {
-            string suit = "";
-            for (int i = 0; i < 4; i++)
-            {
-                switch (i)
-                {
-                    case 0:
-                        suit = "hearts";
-                        break;
-                    case 1:
-                        suit = "clubs";
-                        break;
-                    case 2:
-                        suit = "diamonds";
-                        break;
-                    case 3:
-                        suit = "spades";
-                        break;
-                } // end suit switch
-                for (int face = 1; face < 14; face++)
-                {
-                    deck.Add(new Card(face, suit));
-                } //end for -face
-            } //end for -suit
-        } // end CreateDeck method
+            Deck deck = new Deck(); // create a deck of cards
+            deck.Display(); // display the initial state of the deck
 
-        /**
-        * <summary>
-        * This method displays a list of Card objects to the console.
-        * </summary>
-        *
-        * @method DisplayDeck
-        * @param {list<
-        */
-        public static void DisplayDeck(List<Card>deck) //deck related to Deck in program class
-        {
-            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++");
-            Console.WriteLine("+Current Deck");
-            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++");
-            foreach (Card card in deck) //foreach TABTAB. For each(Card) card in deck
-            {
-                Console.WriteLine("{0} of {1}", card.Face, card.Suit);
-            }
-            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++");
-            Console.WriteLine();
-        }
+            deck.Shuffle(); // shuffle the deck
+            deck.Display(); // display the deck after shuffling
 
-        /**
-        * <summary>
-        * This method randomly shuffles a list of Card objects
-        * </summary>
-        *
-        * @method shuffleDeck
-        * @param {list<Card>deck
-        * @returns {void}
-        */
-        public static void ShuffleDeck(List<Card>deck)
-        {
-            // this creats a sudo random number sequence and stores it in random
-            Random random = new Random(); // new: create a new type of random and assign it to the shape of random
-            // record the number of cards in the deck
-            int cardCount = deck.Count;
 
-            Console.WriteLine("Card count: {0}", cardCount);
+        } // end Main
 
-            //iterate through the list of cards
-            for(int currentCard = 0; currentCard < cardCount; currentCard++)
-            {
-                // swapping algorithm
 
-                Card tempCard = deck[currentCard]; // takes the current card and places it in tempcard
-                int randomCard = random.Next(0, cardCount); // get a random card index
-                deck[currentCard] = deck[randomCard]; // copy value from randomCard to currentCard
-                deck[randomCard] = tempCard; // copy current card to random card
-            }
-        }
+
     } // end Program
-} // End namespace
 
-/* MY CODE MISTAKES
+} // end namespace
+//        // PUBLIC STATIC METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-public static void Main(string[] args)
-{
-    Person person;
+//        /**
+//         * <summary>
+//         * This method loads a list of cards with Card objects
+//         * </summary>
+//         * 
+//         * @method CreateDeck
+//         * @param {List<Card>} deck
+//         * @returns {void}
+//         */
+//        public static void CreateDeck(List<Card> deck)
+//        {
+//            string suit = "";
+//            for (int i = 0; i < 4; i++)
+//            {
+//                switch (i)
+//                {
+//                    case 0:
+//                        suit = "hearts";
+//                        break;
+//                    case 1:
+//                        suit = "clubs";
+//                        break;
+//                    case 2:
+//                        suit = "diamonds";
+//                        break;
+//                    case 3:
+//                        suit = "spades";
+//                        break;
+//                } // end suit switch
+//                for (int face = 1; face < 14; face++)
+//                {
+//                    deck.Add(new Card(face, suit));
+//                } //end for -face
+//            } //end for -suit
+//        } // end CreateDeck method
 
-    // create a new instance for the Person class
-    person = new Person();
+//        /**
+//        * <summary>
+//        * This method displays a list of Card objects to the console.
+//        * </summary>
+//        *
+//        * @method DisplayDeck
+//        * @param {list<
+//        */
+//        public static void DisplayDeck(List<Card>deck) //deck related to Deck in program class
+//        {
+//            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++");
+//            Console.WriteLine("+Current Deck");
+//            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++");
+//            foreach (Card card in deck) //foreach TABTAB. For each(Card) card in deck
+//            {
+//                Console.WriteLine("{0} of {1}", card.Face, card.Suit);
+//            }
+//            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++");
+//            Console.WriteLine();
+//        }
 
-    //Console.WriteLine(person.Name);
+//        /**
+//        * <summary>
+//        * This method randomly shuffles a list of Card objects
+//        * </summary>
+//        *
+//        * @method shuffleDeck
+//        * @param {list<Card>deck
+//        * @returns {void}
+//        */
+//        public static void ShuffleDeck(List<Card>deck)
+//        {
+//            // this creats a sudo random number sequence and stores it in random
+//            Random random = new Random(); // new: create a new type of random and assign it to the shape of random
+//            // record the number of cards in the deck
+//            int cardCount = deck.Count;
 
-    // set a value in the Name properly of the Person class
-    //person.Name = ("Meer");
-    //person.Age = (26);
+//            Console.WriteLine("Card count: {0}", cardCount);
 
-    // get the Name Value and print to console
-    Console.WriteLine("{0} says hello", person.Name);
-    Console.WriteLine("{0} is {1} years old", person.Name, person.Age);
-}
-*/
+//            //iterate through the list of cards
+//            for(int currentCard = 0; currentCard < cardCount; currentCard++)
+//            {
+//                // swapping algorithm
+
+//                Card tempCard = deck[currentCard]; // takes the current card and places it in tempcard
+//                int randomCard = random.Next(0, cardCount); // get a random card index
+//                deck[currentCard] = deck[randomCard]; // copy value from randomCard to currentCard
+//                deck[randomCard] = tempCard; // copy current card to random card
+//            }
+//        }
+//    } // end Program
+//} // End namespace
+
+///* MY CODE MISTAKES
+
+//public static void Main(string[] args)
+//{
+//    Person person;
+
+//    // create a new instance for the Person class
+//    person = new Person();
+
+//    //Console.WriteLine(person.Name);
+
+//    // set a value in the Name properly of the Person class
+//    //person.Name = ("Meer");
+//    //person.Age = (26);
+
+//    // get the Name Value and print to console
+//    Console.WriteLine("{0} says hello", person.Name);
+//    Console.WriteLine("{0} is {1} years old", person.Name, person.Age);
+//}
+//*/
