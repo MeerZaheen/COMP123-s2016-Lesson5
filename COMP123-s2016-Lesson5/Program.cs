@@ -22,16 +22,21 @@ namespace COMP123_s2016_Lesson5
          */
         public static void Main(string[] args)
         {
-            Deck deck = new Deck(); // create a deck of cards
+            string playAgain = " ";
+            do
+            {
+                Deck deck = new Deck(); // create a deck of cards
             deck.Display(); // display the initial state of the deck
-
             deck.Shuffle(); // shuffle the deck
             deck.Display(); // display the deck after shuffling
 
             Card cardDealth = deck.Deal();
-            Console.WriteLine("Card Delt: {0} or {1}", cardDealth.Face, cardDealth.Suit);
+            Console.WriteLine("Card Delt: {0} of {1}", cardDealth.Face, cardDealth.Suit);
             Console.WriteLine();
             deck.Display();
+                Console.WriteLine("*         Type 'play' to play again!          *");
+                playAgain = Console.ReadLine();
+            } while (playAgain == "play") ;
 
         } // end Main
 
