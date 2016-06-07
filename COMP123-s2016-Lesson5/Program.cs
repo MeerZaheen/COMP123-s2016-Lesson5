@@ -26,6 +26,7 @@ namespace COMP123_s2016_Lesson5
             List<Card> Deck = new List<Card>();
 
             CreateDeck(Deck);
+            DisplayDeck(Deck);
         }// end Main
 
         // PUBLIC STATIC METHODS ++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -65,8 +66,21 @@ namespace COMP123_s2016_Lesson5
                 } //end for -face
             } //end for -suit
         } // end CreateDeck method
-    }
-}
+
+        public static void DisplayDeck(List<Card>deck) //deck related to Deck in program class
+        {
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++");
+            Console.WriteLine("+Current Deck");
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++");
+            foreach (Card card in deck) //foreach TABTAB. For each(Card) card in deck
+            {
+                Console.WriteLine("{0} of {1}", card.Face, card.Suit);
+            }
+            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++");
+            Console.WriteLine();
+        }
+    } // end Program
+} // End namespace
 
 /* MY CODE MISTAKES
 
