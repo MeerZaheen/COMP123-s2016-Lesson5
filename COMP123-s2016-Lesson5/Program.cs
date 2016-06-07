@@ -14,7 +14,7 @@ namespace COMP123_s2016_Lesson5
     public class Program
     {
         /**
-         * the main method for our driver class Program
+         * the main method for our driver class Program. Added a small do while loop for the user to play again if wanted
          * 
          * @method Main
          * @param {sting[]} args
