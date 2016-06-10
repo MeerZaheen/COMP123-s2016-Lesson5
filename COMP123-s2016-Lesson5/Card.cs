@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace COMP123_s2016_Lesson5
 {
-    /**
+    /**\\Mac\Home\Documents\COMP123-PROGRAMMING 2\COMP123-s2016-Lesson5\COMP123-s2016-Lesson5\Card.cs
     * <summary>
     * This class creates an object that represent a playing card
     * </summary>
@@ -17,8 +17,8 @@ namespace COMP123_s2016_Lesson5
     {
         // PUBLIC PROPERTIES ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-        public int Face { get; set; }     // prop TAB TAB
-        public string Suit { get; set; }
+        public Faces Face { get; set; }     // prop TAB TAB
+        public Suits Suit { get; set; }
 
         /**
         * <summary>
@@ -26,11 +26,11 @@ namespace COMP123_s2016_Lesson5
         * </summary>
         *
         * @constructor Card
-        * @param {int} face
-        * @param {string} suit
+        * @param Faces face
+        * @param Suits suit
         */
 
-        public Card(int face, string suit)      // cc TAB TAB
+        public Card(Faces face, Suits suit)      // cc TAB TAB
         {
             this.Face = face;
             this.Suit = suit;

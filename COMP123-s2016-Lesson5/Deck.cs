@@ -44,32 +44,14 @@ namespace COMP123_s2016_Lesson5
          */
         private void _create()
         {
-            string suit = "";
 
-            for (int suitIndex = 0; suitIndex < 4; suitIndex++)
+            foreach (Suits suit in Enum.GetValues(typeof(Suits))) // for each suit in Suits
             {
-                switch (suitIndex)
+                foreach (Faces face in Enum.GetValues(typeof(Faces)))
                 {
-                    case 0:
-                        suit = "hearts";
-                        break;
-                    case 1:
-                        suit = "clubs";
-                        break;
-                    case 2:
-                        suit = "diamonds";
-                        break;
-                    case 3:
-                        suit = "spades";
-                        break;
-
-                } // end suit switch
-                for (int face = 1; face < 14; face++)
-                {
-                    this.Add(new Card(face, suit));
-                } // end for - face
-
-            } // end for - suit
+                    this.Add(new Card(face, suit)); // anonymous card object to the list
+                }
+            }
 
         } // end CreateDeck method
 
