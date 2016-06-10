@@ -10,29 +10,22 @@
   <Class Name="PersonProject.Student">
     <Position X="4" Y="1" Width="3.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAgAAAAAAABAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAgAAEAAAABAAAAAAAAAAAAAAAAABAAAA=</HashCode>
       <FileName>Student.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PersonProject.Teacher">
-    <Position X="3.25" Y="4.5" Width="2.5" />
+    <Position X="4.25" Y="4.25" Width="3.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <HashCode>EAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
       <FileName>Teacher.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="PersonProject.InternationalStudent">
-    <Position X="8.25" Y="0.5" Width="1.5" />
+  <Class Name="PersonProject.Program">
+    <Position X="8.5" Y="1.5" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>InternationalStudent.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="PersonProject.DomesticStudent">
-    <Position X="8.25" Y="2" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>DomesticStudent.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
